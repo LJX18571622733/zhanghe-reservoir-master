@@ -8,7 +8,7 @@
 
         <el-form-item label="用户">
           <el-input
-            placeholder="请输入用户测"
+            placeholder="请输入用户"
             v-model="loginModal.userCode"
           ></el-input>
         </el-form-item>
