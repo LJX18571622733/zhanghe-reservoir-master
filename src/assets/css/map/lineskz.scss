@@ -1,0 +1,60 @@
+.info {
+    height: 500px;
+    width: 100%;
+    /*background: rgba(40, 73, 133, 0.8);*/
+
+    .tableForm {
+        height: calc(100% - 20px);
+        min-width: 330px;
+        margin: 10px;
+
+        /deep/ .el-input__inner {
+            @include styles('background-color', 'elInputBg');
+            @include styles('color', 'elInputColor');
+            @include themeify {
+                border: 1px solid themed(elInputBorder);
+            }
+        }
+
+        /deep/ .el-form-item__label {
+            width: 60px;
+            padding: 0 5px 0 0;
+        }
+
+        .form-wrapper {
+            width: 100%;
+            height: 50px;
+        }
+
+        .demo-form-inline {
+            line-height: 50px;
+
+            /deep/ .el-form-item {
+                margin-bottom: 0px;
+
+                .el-form-item__content {
+                    line-height: 50px;
+                }
+
+                .el-form-item__label {
+                    @include styles('color', 'labelColor');
+                }
+            }
+        }
+        
+        .table-wrapper {
+            width: 100%;
+            margin-top: 10px;
+            position: relative;
+            /deep/ .el-table__body tr.current-row:hover {
+                background: #21855A !important;
+                color: $white;
+              }
+              /deep/ .el-table__body tr.current-row:hover td {
+                background: #21855A !important;
+                color: $white;
+              }
+        }
+
+    }
+}

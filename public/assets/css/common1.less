@@ -1,0 +1,699 @@
+// header
+.header {
+    position: absolute;
+    z-index: 10;
+    top: 0;
+    width: 100%;
+
+    img {
+        width: 100%;
+        height: 100%;
+        min-height: 65px;
+    }
+}
+
+#menu1 {
+    position: absolute;
+    left: 40%;
+    top: -6px;
+    color: #fff;
+    z-index: 100;
+}
+
+#menu li {
+    cursor: pointer;
+    float: left;
+    padding: 10px;
+}
+
+// app.vue
+.menu {
+
+    /deep/.el-menu--horizontal {
+        border-bottom: 0;
+        .el-menu-item {
+			font-size: 18px;
+            font-weight: 800;
+            border-bottom: none;
+			background-color: transparent !important;
+		
+
+        }
+        .is-active {
+            position: relative;
+            border-bottom: none;
+            z-index: 9;
+            background: url('../img/light.png') no-repeat center 9px;
+            background-size: 100% 100%;
+        }
+    }
+  
+    .is-light {
+        position: absolute;
+        z-index: 8;
+        left: 0;
+        bottom: 0
+    }
+
+
+}
+.comApp{
+	/deep/.el-menu {
+        border-bottom: 0;
+        .el-menu-item {
+            font-size: 15px;
+            font-weight: 400;
+			background-color: transparent !important;
+			text-align: left;
+			height: 40px!important;
+			line-height: 40px!important;
+
+        }
+        .is-active {
+            position: relative;
+            z-index: 9;
+            background: url('../img/light.png') no-repeat center 9px;
+            background-size: 100% 100%;
+        }
+    }
+    .el-submenu__title{text-align: left;}
+}
+
+/* 滚动条 */
+::-webkit-scrollbar-thumb:horizontal {
+    /*水平滚动条的样式*/
+    width: 4px;
+    background-color: #cccccc;
+    border-radius: 4px;
+}
+
+::-webkit-scrollbar-track-piece {
+    background-color: transparent;
+    /*滚动条的背景颜色*/
+    border-radius: 0;
+    /*滚动条的圆角宽度*/
+}
+
+::-webkit-scrollbar {
+    width: 10px;
+    // width: 0;
+    /*滚动条的宽度*/
+    height: 8px;
+    // height: 0;
+    /*滚动条的高度*/
+}
+
+// 一张图home.vue
+.home {
+    width: 100%;
+
+    .arrow,
+    .apply,
+    .imgex,
+    .home-right {
+        position: absolute;
+        z-index: 2;
+        top: 10vh
+    }
+
+    .arrow {
+        display: flex;
+        justify-content: space-between;
+        width: 100%;
+    }
+
+    .apply {
+        margin-top: 5%;
+        position: relative;
+        float: left;
+        margin-left: 20px;
+        color: #fff;
+        text-align: left;
+
+
+        .title {
+            padding-left: 10px;
+        }
+
+        .all {
+            position: relative;
+            top: -5px;
+            padding-left: 3px;
+            font-size: 18px;
+        }
+
+        .apply-list {
+            position: relative;
+            width: 140px;
+            height: auto;
+            padding: 2px;
+            background: url('../img/text-bg.png') no-repeat center center;
+            background-size: 100% 100%;
+
+            /deep/.el-menu {
+                border-right: none;
+
+                i {
+                    padding-right: 8px;
+                }
+
+                .el-menu-item,
+                .el-submenu__title {
+                    height: 34px;
+                    line-height: 34px;
+                }
+
+                .el-menu-item:focus,
+                .el-menu-item:hover {
+                    background-color: #132a88 !important;
+                }
+
+                .ac-menu {
+                    background-color: #132a88 !important;
+                }
+            }
+
+            /*.apply-check{
+					position: absolute;
+					left: 150px;
+					width: 140px;
+					height: 155px;
+					padding: 2px;
+					background:url('../img/text-bg01.png') no-repeat center center;
+					background-size: 100% 100%;
+
+					.el-checkbox-group{
+						padding: 5px 10px;
+					}
+
+					/deep/.el-checkbox__inner{
+						border: none;
+						background:url('../img/checkbox.png') no-repeat center center;
+					}
+
+					/deep/.el-checkbox__inner::after{
+						height: 12px;
+						width: 12px;
+						top:0;
+						left: 2px;
+						border:none;
+						background:url('../img/true.png') no-repeat center center;
+						background-size: 100% 100%;
+					}
+
+					.el-checkbox{
+						height: 25px;
+
+						.el-checkbox__input.is-checked .el-checkbox__inner::after{
+							transform:none!important
+						}
+					}
+
+					.el-checkbox__label{
+						font-size: 12px;
+						color:rgba(255,255,255,.6)
+					}
+				}*/
+            .apply-check {
+                position: absolute;
+                left: 150px;
+                width: 140px;
+                height: 155px;
+                padding: 2px;
+                background: url('../img/text-bg01.png') no-repeat center center;
+                background-size: 100% 100%;
+
+                .el-radio-group {
+                    padding: 5px 10px;
+                }
+
+                /deep/.el-radio__inner {
+                    border: none;
+                    background: url('../img/checkbox.png') no-repeat center center;
+                }
+
+                /deep/.el-radio__inner::after {
+                    height: 12px;
+                    width: 12px;
+                    top: 0;
+                    left: 2px;
+                    border: none;
+                    background: url('../img/true.png') no-repeat center center;
+                    background-size: 100% 100%;
+                }
+
+                .el-radio {
+                    height: 25px;
+
+                    .el-radio__input.is-checked .el-radio__inner::after {
+                        transform: none !important
+                    }
+                }
+
+                .el-radio__label {
+                    font-size: 12px;
+                    color: rgba(255, 255, 255, .6)
+                }
+            }
+
+        }
+    }
+
+    .imgex {
+        position: absolute;
+        top: 70vh;
+        width: 380px;
+        background: url('../img/imgex.png') no-repeat center center;
+        background-size: 100% 100%;
+        text-align: left;
+
+        .imgex-nav {
+            padding-left: 10px;
+            color: #fff;
+            font-size: 16px;
+            line-height: 28px;
+
+            i {
+                padding-left: 10px;
+            }
+        }
+
+        .el-select {
+            width: 60%;
+
+            .el-input {
+                width: 40%;
+            }
+        }
+
+        /deep/.el-input__inner {
+            padding-left: 8px;
+            height: 28px;
+            background-color: transparent;
+            border: none;
+            color: #fff;
+            font-size: 16px;
+        }
+        .el-input__icon {
+            line-height: 28px;
+        }
+
+        .opera {
+            padding: 10px 10px 15px;
+
+
+            .el-button--primary.is-plain {
+                color: #fff;
+                background: rgba(255, 255, 255, .3);
+                border-color: #dcdcdc;
+
+                &:hover,
+                &:active,
+                &:focus {
+                    font-weight: 800;
+                    background: rgba(0, 255, 255, .3);
+                    border-color: #00ffff;
+                    box-shadow: 0 0 5px rgba(255, 255, 255, .6)
+                }
+            }
+
+
+            .active {
+                font-weight: 800 !important;
+                background: rgba(0, 255, 255, .3) !important;
+                border-color: #00ffff !important;
+                box-shadow: 0 0 5px rgba(255, 255, 255, .6) !important
+            }
+
+        }
+
+        .icons {
+            display: flex;
+            padding: 0 10px 15px;
+            font-size: 11px;
+            color: #fff;
+
+            i {
+                margin: 5px 0;
+                font-size: 14px;
+                color: #00ffff
+            }
+
+            .icons-li {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                width: 50px;
+            }
+        }
+    }
+
+    .home-right {
+        float: right;
+        right: 0;
+        max-height: calc(100vh - 175px);
+        overflow-y: auto;
+        margin-right: 5px;
+        margin-top: 40px;
+        color: rgba(255, 255, 255, .6);
+        text-align: left;
+        font-size: 12px;
+
+        .title {
+            padding-left: 10px;
+        }
+
+        .all {
+            position: relative;
+            top: -5px;
+            padding-left: 3px;
+            font-size: 18px;
+            color: #fff;
+        }
+
+      
+
+        .job-title {
+            margin: 10px 0;
+
+            .job {
+                width: 550px;
+                height: auto;
+                padding: 15px;
+                background: url('../img/job.png') no-repeat center center;
+                background-size: 100% 100%;
+
+                .chart {
+                    display: flex;
+                    margin-bottom: 10px;
+
+                    .cp {
+                        width: 35px;
+                        padding: 22px 2px 0;
+                        text-align: center;
+                        border-radius: 5px;
+                        color: #fff;
+                    }
+
+                    .first {
+                        background-color: rgba(216, 168, 37, 0.5);
+                    }
+
+                    .second {
+                        background-color: rgba(231, 119, 80, 0.5);
+                    }
+
+                    .third {
+                        background-color: rgba(19, 206, 230, 0.5);
+                    }
+                }
+
+                .mode {
+                    padding-left: 10px;
+                    writing-mode: tb
+                }
+            }
+
+            .chart1,
+            .chart2,
+            .chart3 {
+                width: 510px;
+                height: 110px;
+            }
+        }
+
+        .video {
+            width: 550px;
+            height: auto;
+            padding: 15px;
+            background: url('../img/video.png') no-repeat center center;
+            background-size: 100% 100%;
+            text-align: center;
+        }
+    }
+
+
+    .bottom {
+        position: absolute;
+        width: 100%;
+        height: 32px;
+        bottom: 0;
+        z-index: 10;
+        background: url('../img/bottom.png') no-repeat center center;
+        background-size: 100% 100%;
+        font-size: 12px;
+        color: rgba(255, 255, 255, .5);
+        text-align: center;
+        line-height: 32px;
+    }
+
+}
+
+// cesiumScence
+.context-menu {}
+
+.cesium {
+
+    .dot {
+
+        /deep/.el-dialog {
+            background: #1bd3ffb5;
+            height: 70vh;
+
+            .el-dialog__headerbtn {
+                top: 10px
+            }
+            .el-dialog__headerbtn .el-dialog__close {
+                color: #333;
+            }
+
+            .el-dialog__header {
+                padding: 10px 20px;
+                text-align: left;
+                border-bottom: 1px solid
+            }
+
+            .el-tree {
+                border-right: 1px solid;
+                padding: 20px;
+                height: 100%;
+                background: rgba(0, 0, 0, 0);
+                color: #333
+            }
+
+            .el-table {
+                margin: 20px;
+            }
+
+            // .el-table, .el-table__expanded-cell {
+            //     background-color: transparent;
+            // }
+
+            // .el-table tr {
+            // background-color: transparent!important;
+            // }
+            // .el-table--enable-row-transition .el-table__body td, .el-table .cell{
+            //    background-color: transparent;
+            // }
+
+            // .el-table::before {//去除底部白线
+            // left: 0;
+            // bottom: 0;
+            // width: 100%;
+            // height: 0px;
+            // }
+
+            .el-dialog__body {
+                padding: 0;
+                display: flex;
+                justify-content: space-between;
+                overflow-y: auto;
+                height: calc(70vh - 45px);
+            }
+        }
+    }
+
+    .point {
+        position: absolute;
+        left: 20vh;
+        top: 30vh;
+        z-index: 9;
+        padding: 10px;
+        background-color: #26B7DC;
+        text-align: left;
+        font-size: 14px;
+
+        .el-icon-location {
+            color: #69d5ff;
+            font-size: 18px;
+        }
+
+        .point-first {
+            color: #fff;
+            font-weight: 800;
+            font-size: 16px;
+
+        }
+
+        .point-second {
+            color: red;
+        }
+    }
+}
+
+.slaq {
+    height: 100%;
+    min-width: 1200px;
+
+    video {
+        width: calc(100% - 30px);
+        height: 380px;
+        margin-bottom: 20px;
+    }
+    .el-dialog {
+        max-height: 70vh;
+        overflow-y: auto;
+        background: rgba(0, 0, 0, 0);
+        box-shadow: none;
+
+        .el-dialog__headerbtn .el-dialog__close {
+            display: none
+        }
+    }
+
+
+    .slaq_content {
+        display: flex;
+        justify-content: space-between;
+
+        .el-table {
+            font-size: 12px;
+        }
+
+        .p-bottom {
+            line-height: 60px;
+        }
+
+        .dialog-title {
+            position: relative;
+            text-align: left;
+            margin-bottom: 15px;
+            background: #3266CC;
+            color: #fff;
+            padding: 10px;
+
+            .iconfont {
+                padding-right: 10px;
+            }
+
+            span.title {
+                font-size: 14px;
+                font-weight: 800;
+                color: fff;
+            }
+
+            .title-s {
+                padding-left: 10px;
+                font-size: 14px;
+                color: rgba(255, 255, 255, .6);
+            }
+        }
+
+        .button-right {
+            position: absolute;
+            right: 10px;
+            top: 10px;
+            .el-icon-error {
+                cursor: pointer;
+            }
+            .add {
+                margin-right: 20px;
+                padding: 3px 11px;
+                background: #ffffff75;
+                border-radius: 5px;
+                font-size: 12px;
+                cursor: pointer;
+            }
+        }
+
+        .slaq_chart {
+            width: calc(100% - 320px);
+            background: #fff;
+
+            .el-table {
+                margin: 20px;
+                width: calc(100% - 40px);
+
+                tr > th {
+                    background: #E0E7F5;
+                }
+            }
+
+            .echart1 {
+                width: 100%;
+                height: 400px;
+            }
+
+            .echart3,
+            .echart4,
+            .echart6 {
+                width: 100%;
+                height: 400px;
+            }
+
+            .tb {
+                display: flex;
+                justify-content: space-between;
+                .echart2 {
+                    width: 50%;
+                    height: 300px;
+                }
+            }
+
+
+            .opera {
+                display: flex;
+                padding: 0 20px;
+                font-size: 12px;
+                .el-button--primary {
+                    height: 33px;
+                    line-height: 10px;
+                    margin-left: 10px;
+                }
+
+                p {
+                    width: 115px;
+                    line-height: 30px;
+                }
+            }
+        }
+
+        .tree {
+            width: 300px;
+            margin-left: 20px;
+            text-align: left;
+            background-color: #fff;
+
+            i {
+                cursor: pointer;
+            }
+
+            .right-check {
+                padding: 0 10px;
+            }
+
+            .el-tree {
+                margin: 0 20px;
+            }
+
+            .el-checkbox-group {
+                margin: 0 20px;
+                .el-checkbox {
+                    width: 100%;
+                }
+            }
+
+        }
+    }
+
+}

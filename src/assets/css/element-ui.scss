@@ -1,0 +1,431 @@
+@mixin element-ui-common {
+  /************ el-table  start************/
+  .el-table {
+    background-color: transparent;
+  }
+  .el-table__expanded-cell {
+    @include stylesIm("background-color", "tableExpandBg");
+  }
+
+  .el-table--border td,
+  .el-table--border th,
+  .el-table__body-wrapper .el-table--border.is-scrolling-left ~ .el-table__fixed {
+    @include themeify {
+      border: 1px solid themed(tableBorder);
+    }
+  }
+
+  .el-table td,
+  .el-table th.is-leaf {
+    @include themeify {
+      border-bottom: 1px solid themed(tableBorder);
+    }
+    // font-size: 16px;
+  }
+  .bigTable td,
+  .bigTable th.is-leaf,
+  .bigTable th {
+    font-size: 16px;
+  }
+
+  .el-table--border,
+  .el-table--group {
+    @include themeify {
+      border: 1px solid themed(tableBorder);
+    }
+  }
+
+  .el-table th {
+    @include styles("color", "tableThColor");
+    @include stylesIm("background", "tableThBg");
+    font-weight: bold;
+    padding: 15px 0;
+    // font-size: 16px;
+
+    .gutter {
+      display: table-cell !important;
+    }
+  }
+
+  .el-table tr {
+    @include styles("color", "tableColor");
+    @include stylesIm("background", "tableTdBg");
+  }
+
+  .el-table--enable-row-hover .el-table__body tr:hover > td {
+    @include stylesIm("background", "tableHoverBg");
+  }
+
+  .el-table__body tr.hover-row.current-row > td,
+  .el-table__body tr.hover-row.el-table__row--striped.current-row > td,
+  .el-table__body tr.hover-row.el-table__row--striped > td,
+  .el-table__body tr.hover-row > td {
+    @include styles("background", "tableHoverBg");
+  }
+  .el-table tr.success-row {
+    background: #21855a !important;
+  }
+  .el-table__body tr.current-row > td {
+    background: #21855a !important;
+    color: $white;
+  }
+
+  .el-table tr .el-table__expand-icon {
+    @include styles("color", "tableColor");
+  }
+
+  .el-table__fixed-right-patch {
+    @include styles("background-color", "tableThBg");
+    @include themeify {
+      border-bottom: 1px solid themed(tableThBg);
+    }
+  }
+  .el-table--border::after,
+  .el-table--group::after,
+  .el-table::before {
+    background-color: transparent;
+  }
+  .el-table__row--striped td {
+    @include stylesIm("background-color", "tableStripeBg");
+  }
+  /************ el-table  end************/
+
+  /************ el-tabs  start***********/
+  .el-tabs--border-card {
+    border: none;
+  }
+  /************ el-tabs  end***********/
+
+  /************ el-checkbox  start***********/
+  .el-checkbox__label {
+    @include styles("color", "checkboxlabelColor");
+  }
+  /************ el-checkbox  end***********/
+
+  /************ el-date-editor  start***********/
+  .el-date-editor--datetimerange.el-input,
+  .el-date-editor--datetimerange.el-input__inner {
+    width: 360px;
+  }
+  .el-range-editor.el-input__inner {
+    padding: 3px 5px;
+  }
+  /************ el-date-editor  end***********/
+
+  /************ el-date-drawer  start***********/
+  .el-drawer__body {
+    overflow: hidden;
+  }
+  /************ el-date-drawer  end***********/
+
+  /************ el-date-drawer  start***********/
+  .el-card__body {
+    height: 100%;
+    box-sizing: border-box;
+  }
+  /************ el-date-drawer  end***********/
+
+  /************ el-menu  start************/
+  .el-menu {
+    .el-submenu.is-opened > .el-menu {
+      @include stylesIm("background-color", "elMenuOpenedUlBg");
+    }
+    .el-submenu.is-active .el-submenu__title,
+    .el-submenu.is-active .el-submenu__title i,
+    .el-submenu .el-menu-item.is-active [class^="iconfont"] {
+      @include stylesIm("color", "elMenuItemActiveText");
+    }
+    .el-submenu__title:hover,
+    .el-submenu__title:focus,
+    .el-menu-item:hover {
+      @include stylesIm("background-color", "elMenuHoverBg");
+    }
+    .el-menu-item.is-active {
+      @include stylesIm("background-color", "--color-primary");
+    }
+    .el-submenu [class^="iconfont"] {
+      vertical-align: middle;
+      margin-right: 5px;
+      width: 24px;
+      text-align: center;
+      font-size: 18px;
+      @include styles("color", "elMenuItemText");
+    }
+    .el-submenu__title,
+    .el-submenu__title i,
+    .el-menu-item {
+      @include styles("color", "elMenuItemText");
+    }
+    .el-menu-item.is-active {
+      @include styles("color", "elMenuItemActiveText");
+    }
+  }
+  //   .el-menu--vertical[x-placement="right-start"] {
+  //     .el-menu-item i {
+  //       @include styles('color', 'elMenuItemText');
+  //     }
+  //     .el-menu-item.is-active i {
+  //       @include styles('color', 'elMenuItemActiveText');
+  //     }
+  //   }
+  /************ el-menu  end************/
+
+  .el-loading-mask {
+    @include stylesIm("background-color", "loadingMask");
+  }
+
+  /************ el-pagination  start ************/
+  .el-pagination.is-background .btn-next,
+  .el-pagination.is-background .btn-prev,
+  .el-pagination.is-background .el-pager li {
+    @include styles("background", "elPagerBg");
+    @include styles("color", "elPagerColor");
+  }
+
+  /************ el-pagination  end ************/
+
+  /************ el-datetimepicker 日历表格调小  start ************/
+  .el-date-picker {
+    width: 280px;
+  }
+  .el-date-range-picker {
+    width: 560px;
+  }
+  .el-date-range-picker.has-sidebar {
+    width: 670px;
+  }
+  .el-date-picker .el-picker-panel__content {
+    width: 250px;
+    margin: 5px 15px;
+  }
+  .el-date-range-picker__content {
+    padding: 12px;
+  }
+  .el-date-picker__header {
+    margin: 8px 12px;
+  }
+  .el-date-table td span {
+    width: 20px;
+    height: 20px;
+    line-height: 20px;
+  }
+  .el-date-table td,
+  .el-date-table td div {
+    height: 26px;
+  }
+  .el-picker-panel {
+    line-height: 24px;
+  }
+  /************ el-datetimepicker 日历表格调小  end ************/
+
+  .el-popconfirm__main {
+    margin-bottom: 14px;
+  }
+
+  .el-button--small {
+    padding: 9px 20px;
+  }
+
+  /************ el-form  style1  start ************/
+  // 蓝色为主题色的表单风格
+  .form-style1 {
+    .el-input__inner,
+    .el-textarea__inner {
+      @include themeify {
+        border: 1px solid themed(elInputBorder);
+      }
+      @include stylesIm("background-color", "elInputBg1");
+      @include styles("color", "elInputColor");
+    }
+    .el-input__prefix,
+    .el-input__suffix {
+      @include stylesIm("color", "elInputBorder");
+    }
+
+    .el-button--primary {
+      @include styles("border-color", "elButtonBorder");
+      @include styles("background-color", "elButtonBg");
+      &:hover {
+        @include styles("background-color", "elButtonHoverBg");
+      }
+    }
+    .el-button--default {
+      @include styles("border-color", "treeBorder");
+      @include styles("background-color", "elInputBg");
+      @include styles("color", "mainTextColor");
+      &:hover {
+        @include styles("background-color", "defaultBtn");
+        @include styles("border-color", "defaultBtnBoder");
+      }
+    }
+
+    .el-form-item__label {
+      @include styles("color", "elInputColor");
+    }
+
+    .el-select-dropdown {
+      @include stylesIm("background-color", "elDropdownBg");
+      @include themeify {
+        border-color: themed(elDropdownBorder) !important;
+      }
+      .el-select-dropdown__item {
+        @include styles("color", "elInputColor");
+        &.hover,
+        &:hover {
+          @include stylesIm("background-color", "elDropdownHover");
+        }
+      }
+      &.el-popper[x-placement^="bottom"] .popper__arrow {
+        @include themeify {
+          border-bottom-color: themed(elDropdownBorder) !important;
+        }
+        &:after {
+          @include themeify {
+            border-bottom-color: themed(elDropdownBorder) !important;
+          }
+        }
+      }
+    }
+
+    .el-date-editor .el-range-input {
+      background-color: transparent;
+      @include styles("color", "elInputColor");
+    }
+    .el-date-editor .el-range-separator,
+    .el-date-editor .el-range-input {
+      @include styles("color", "elInputColor");
+    }
+    .el-radio {
+      @include styles("color", "elInputColor");
+    }
+
+    .el-input-group__append {
+      @include styles("background-color", "elInputBg1");
+      .el-button--default {
+        @include styles("border-color", "elInputBg2");
+        @include styles("background-color", "elInputBg1");
+        i {
+          @include styles("color", "elInputColor");
+        }
+      }
+    }
+  }
+  // 蓝色主题的弹出框
+  [data-theme="dark"].dialogBox {
+    .el-dialog,
+    .el-pager li {
+      background-color: rgba(32, 64, 123, 0.9);
+      color: #fff;
+    }
+    .el-dialog__title {
+      color: #fff;
+    }
+  }
+
+  [data-theme="dark"] .el-upload--picture-card {
+    background-color: rgba(32, 64, 123, 0.9) !important;
+  }
+
+  [data-theme="dark"] .el-page-header,
+  [data-theme="dark"] .el-page-header__content {
+    color: #fff;
+  }
+  /************ el-form    style1  end ************/
+
+  /************ el-form  style2  start ************/
+  // 蓝绿色为主题色的表单风格
+  .form-style2 {
+    .el-input__inner {
+      @include themeify {
+        border: 1px solid themed(elInputBorder);
+      }
+      @include stylesIm("background-color", "elInputBg2");
+      @include styles("color", "elInputColor");
+    }
+    .el-input__prefix,
+    .el-input__suffix {
+      @include stylesIm("color", "elInputBorder");
+    }
+    .el-button,
+    .el-radio-button__inner {
+      @include styles("border-color", "elInputBorder");
+      @include styles("background-color", "elButtonBg2");
+      @include styles("color", "elButtonColor");
+      &:hover,
+      &:focus {
+        @include styles("background-color", "elButtonHoverBg2");
+        color: $white;
+      }
+    }
+    .el-button--primary,
+    .el-radio-button__orig-radio:checked + .el-radio-button__inner {
+      color: $white !important;
+      @include styles("border-color", "elButtonPrimaryBorder");
+      @include styles("background-color", "elButtonBg3");
+      &:hover,
+      &:focus {
+        @include styles("background-color", "elButtonHoverBg2");
+      }
+    }
+    .el-radio-button:first-child .el-radio-button__inner {
+      @include styles("border-color", "elButtonBorder");
+    }
+    .el-radio-button__orig-radio:checked + .el-radio-button__inner {
+      @include themeify {
+        box-shadow: -1px 0 0 0 themed(elButtonBorder);
+      }
+    }
+
+    .el-form-item__label {
+      @include styles("color", "elInputColor");
+    }
+    .el-range-input {
+      background-color: transparent;
+      @include styles("color", "elInputColor");
+    }
+    .el-date-editor .el-range-separator {
+      @include styles("color", "elInputColor");
+    }
+    .el-input-group__append,
+    .el-input-group__prepend {
+      @include styles("border-color", "elInputBorder");
+      @include styles("background-color", "elButtonBg3");
+      color: $white;
+      .el-button {
+        border: none;
+        background: transparent;
+        border-radius: 0;
+        color: $white;
+      }
+    }
+  }
+  /************ el-form    style2  end ************/
+}
+
+@mixin el-menu-popper {
+  .my-menu-popper {
+    .el-menu--popup {
+      background-color: #002766 !important;
+      // @include stylesIm('background-color', 'elMenuBg');
+      .el-menu-item {
+        color: #91d5ff;
+        &.is-active {
+          color: #e6f7ff;
+          background-color: #1890ff !important;
+          i {
+            color: #e6f7ff;
+          }
+        }
+
+        &:hover {
+          background-color: #003a8c !important;
+        }
+
+        i {
+          color: #91d5ff;
+          margin-right: 5px;
+        }
+      }
+    }
+  }
+}

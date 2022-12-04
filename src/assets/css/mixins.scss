@@ -1,0 +1,5 @@
+@charset 'utf-8';
+
+@mixin transition {
+    transition: all 0.5s linear;
+}

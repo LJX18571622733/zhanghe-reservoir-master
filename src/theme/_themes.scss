@@ -1,0 +1,136 @@
+@import '@/assets/css/variable.scss';
+
+//定义theme-map
+$lightTheme: (
+    '--color-primary': lighten($blue-1, 10%),
+    elMenuBg: #002766,
+    elMenuItemText: #91d5ff,
+    elMenuItemActiveText: #e6f7ff,
+    elMenuHoverBg: #003a8c,
+    elMenuOpenedUlBg: rgba($white, 0.04), 
+    mainContainerBg: #f3f3f3,
+    blockBg: $white,
+    titleTextColor: #000,
+    mainTextColor: #666,
+    lightTextColor: #9a9a9a,
+    labelColor: $grey-1,
+    tableBorder: #c6dbed,
+    tableColor: $grey-1,
+    tableThBg: #d7ebf6,
+    tableThBg1: #89aeec,
+    tableTdBg: #fbfbfb,
+    tableHoverBg: #F5F7FA,
+    tableExpandBg: red,
+    tableStripeBg: #f5fbff,
+    legendBgEnd: rgba($white, 0.1),
+    elInputBg: $white,
+    elInputBg1: transparent,
+    elInputBg2: $white,
+    elInputBorder: #DCDFE6,
+    elInputColor: $black-1,
+    boxBorder: #91d5ff,
+    boxBorder2: lighten($blue-1, 10%),
+    boxBgColor1: #91d5ff,
+    boxBgColor2: rgba(26, 156, 218, 0.8),
+    checkboxlabelColor: #606266,
+    elButtonColor: #409eff,
+    elButtonBorder: #b3d8ff,
+    elButtonPrimaryBorder: lighten($blue-1, 10%),
+    elButtonBg: lighten($blue-1, 10%),
+    elButtonBg2: transparent,
+    elButtonBg3: lighten($blue-1, 10%),
+    elButtonHoverBg: $blue-1,
+    elButtonHoverBg2: $blue-1,
+    loadingMask: rgba($white, 0.85),
+    elCardBorder: #e9e9e9,
+    elCardBorder2: #318df7,
+    elCardHeaderBg: #f3f3f3,
+    elTreeColor: $black-1,
+    elTreeActiveBg: #c8dce9,
+    listTitle: #666,
+    listLabel: rgba($black, 0.65),
+    splitLine: #eee,
+    treeBorder: #ccc,
+    treeBg: #f7f7f7, 
+    searchButton: #ecf5ff,
+    searchBorderButton: #b3d8ff,
+    dialogBg: $white,
+    dialogTitleBg: #318df7,
+    dialogIconColor: $white,
+    tabsHeader: #F5F7FA,
+    tabsHeaderBorder: #E4E7ED,
+    defaultBtn: #ecf5ff,
+    defaultBtnBoder: #b3d8ff,
+);
+$darkTheme: (
+    '--color-primary': lighten($blue-1, 10%), // 主题色
+    elMenuBg: #002766, // el-menu背景色（左侧菜单）
+    elMenuItemText: #91d5ff, //el-menu文字颜色（左侧菜单）
+    elMenuItemActiveText: #e6f7ff, //el-menu高亮文字颜色（左侧菜单）
+    elMenuHoverBg: #003a8c, //el-menu鼠标悬浮时背景颜色
+    elMenuOpenedUlBg: rgba($white, 0.04), //el-menu展开的一级菜单背景色
+    mainContainerBg: rgba($black, 0.15), //头部菜单以外区域的主要背景色
+    blockBg: #002766, //分块区域颜色（.block-box）
+    titleTextColor: #00f8fe, //标题文字颜色
+    mainTextColor: $white, //正文文字颜色
+    lightTextColor: #ccc, //比正文文本浅一点的文字颜色
+    labelColor: #00f8fe, //表单里label的颜色
+    tableBorder: #4077c3, //el-table 边框颜色
+    tableColor: $white, //el-table 文字颜色
+    tableThBg: rgba($blue-2, 0.8), //el-table 表头背景色
+    tableThBg1: rgba($blue-2, 0.8), // 表格 表头背景色（参数汇总页面表格）
+    tableTdBg: rgba(40, 73, 133, 0.8), //el-table 数据行背景色
+    tableThColor: $white, //el-table 表头文字颜色
+    tableHoverBg: rgba($blue-2, 1), //el-table hover 背景色
+    tableExpandBg: transparent, //el-table 行扩展区域的背景色
+    tableStripeBg: rgba($black, 0.1), //el-table斑马纹背景色
+    legendBgEnd: rgba(0, 39, 102, 0.1), //legendAdorn组件渐变背景色的最后一个颜色
+    elInputBg: transparent, //el-input 背景色
+    elInputBg1: rgba($blue-1, 0.4), //el-input 蓝色风格 背景色
+    elInputBg2: rgba($cyan, 0.2), //el-input 蓝绿色风格 背景色
+    elInputBorder: #00f8fe, //el-input 边框颜色
+    elInputColor: $white, //el-input 文字颜色
+    boxBorder: #019dd6, //（bigDataBox-3组件大边框颜色）
+    boxBorder2: $cyan, //（bigDataBox-3组件小边框颜色）
+    boxBgColor1: #1363bc, //（bigDataBox-3组件背景渐变开始颜色）
+    boxBgColor2: #1a3c95, //（bigDataBox-3组件背景渐变中间颜色）
+    checkboxlabelColor: $white, // el-checkbox label颜色
+    elDropdownBg: rgba(darken($blue-1, 20%), 0.8), //el-select下拉框背景色
+    elDropdownBorder: $cyan, //el-select下拉框边框颜色
+    elDropdownHover: $blue-3, //el-select下拉框选项hover背景颜色
+    elButtonColor: $white, //el-button type=default 文字颜色
+    elButtonBorder: #00f8fe, //el-button type=default 边框颜色
+    elButtonPrimaryBorder: #00f8fe, //el-button type=primary 边框颜色
+    elButtonBg: rgba($blue-1, 0.4), //el-button type=primary 蓝色风格 背景色
+    elButtonBg2: rgba($cyan, 0.2), //el-button type=default 蓝绿色风格 背景色
+    elButtonBg3: rgba($cyan, 0.6), //el-button type=primary 蓝绿色风格 背景色
+    elButtonHoverBg: rgba($blue-1, 0.8), //el-button hover 蓝色风格 背景色
+    elButtonHoverBg2: rgba($cyan, 0.8), //el-button hover 蓝绿色风格 背景色
+    elPagerBg: rgba($white, 0.02), //el-pagination 分页 背景色
+    elPagerColor: rgba($white, 0.45), //el-pagination 文字颜色
+    loadingMask: rgba($black, 0.3), // el-loading-mask背景
+    elCardBorder: $blue-4, //el-card 边框颜色
+    elCardBorder2: $cyan, //el-card 高亮边框颜色
+    elCardBg: rgba($cyan, 0.2), //.el-card.card_style1的背景色（方案卡片）
+    elCardHeaderBg: transparent,//.el-card.card_style1 header的背景色（方案卡片）
+    elTreeColor: $white, //测点选择树el-tree的文字颜色
+    elTreeActiveBg: lighten($blue-1, 10%), //高亮状态el-tree的背景色
+    listTitle: #00f8fe, //展示型列表 如基础信息-组织结构页面详情列表 标题颜色
+    listLabel: #13c7f9, //展示型列表 如基础信息-组织结构页面详情列表 label颜色
+    treeBorder: #00f8fe,
+    treeBg: rgba($black, 0.2), //树形区域背景色
+    searchButton: $blue-1,
+    searchBorderButton: #DCDFE6,
+    splitLine: rgba($white, 0.15), //区域分隔线颜色
+    dialogBg: rgba(32, 64, 123, 0.9), //通用弹出框背景色
+    dialogTitleBg: rgba(26, 97, 164, 0.65), //通用弹出框标题背景色
+    dialogIconColor: #14fbf5, //通用弹出框图标颜色
+    tabsHeader: rgba(32, 64, 123, 0.9),
+    tabsHeaderBorder: #00f8fe,
+    defaultBtn: #1363bc,
+    defaultBtnBoder: #00f8fe,
+);
+$themes: (
+    light: $lightTheme,
+    dark: $darkTheme
+);
